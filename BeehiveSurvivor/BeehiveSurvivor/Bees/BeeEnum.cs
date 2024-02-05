@@ -2,8 +2,9 @@
 
 public enum BeeEnum : int
 {
-    BuilderBee = 0,
-    ForagerBee = 1,
-    QueenBee = 2,
-    WorkerBee = 3
+    QueenBee = 0,
+    BuilderBee = 1,
+    ForagerBee = 2,
+    WorkerBee = 3,
+    Count = 4
 }

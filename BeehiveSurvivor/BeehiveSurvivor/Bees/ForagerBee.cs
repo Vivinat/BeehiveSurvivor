@@ -5,7 +5,7 @@ namespace BeehiveSurvivor.Bees;
 public class ForagerBee : Bee
 {
     private readonly ForagerService _foragerService;
-    public ForagerBee(string name, int level,BeeEnum beeType, ForagerService foragerService) : base(name, level, beeType)
+    public ForagerBee(string name, int level,BeeEnum beeType, EatService eatService, ForagerService foragerService) : base(name, level, beeType, eatService)
     {
         _foragerService = foragerService;
     }
@@ -25,6 +25,6 @@ public class ForagerBee : Bee
 
     private void UseSting()
     {
-        Die(" used her sting and died!");
+        Die("used her sting and died!");
     }
 }

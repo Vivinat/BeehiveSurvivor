@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using BeehiveSurvivor.Bees;
+using BeehiveSurvivor.Factory;
 using BeehiveSurvivor.Services;
 using BeehiveSurvivor.Utils;
 
@@ -20,7 +21,7 @@ public static class BeehiveController
     {
         SurvivedMonths = 0;
         SurvivedYears = 0;
-        QueenBee queenBee = new QueenBee(NameController.GenerateName(), 1, BeeEnum.QueenBee, new BreederService());
+        QueenBee queenBee = new QueenBee(NameController.GenerateName(), 1, BeeEnum.QueenBee, new EatService(), new BreederService(new BeeFactory()));
         Beehive.Add(queenBee);
         queenBee.CreateNewBee();
     }
@@ -43,14 +44,26 @@ public static class BeehiveController
         {
             case 0:
                 StoredHoney -= disasterDamage;
+                if (StoredHoney < 0)
+                {
+                    StoredHoney = 0;
+                }
                 disasterDescription = "Some honey was plundered by a marauding colony";
                 break;
             case 1:
                 StoredPollen -= disasterDamage;
+                if (StoredPollen < 0)
+                {
+                    StoredPollen = 0;
+                }
                 disasterDescription = "Some pollen was taken by fungi!";
                 break;
             case 2:
                 StoredWax -= disasterDamage;
+                if (StoredWax < 0)
+                {
+                    StoredWax = 0;
+                }
                 disasterDescription = "Some wax was destroyed by heavy rain!";
                 break;
             default:

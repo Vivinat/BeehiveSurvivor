@@ -5,7 +5,7 @@ namespace BeehiveSurvivor.Bees;
 public class WorkerBee : Bee
 {
     private readonly HoneyService _honeyService;
-    public WorkerBee(string name, int level,BeeEnum beeType, HoneyService honeyService) : base(name, level, beeType)
+    public WorkerBee(string name, int level,BeeEnum beeType, EatService eatService, HoneyService honeyService) : base(name, level, beeType, eatService)
     {
         _honeyService = honeyService;
     }
