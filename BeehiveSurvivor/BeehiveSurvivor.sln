@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeehiveSurvivor", "BeehiveSurvivor\BeehiveSurvivor.csproj", "{C76EA720-4413-4DCE-94B8-F38CA6150DAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit Tests", "NUnit Tests\NUnit Tests.csproj", "{4C8BBA03-9062-4055-9217-10642764ACDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{C76EA720-4413-4DCE-94B8-F38CA6150DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C76EA720-4413-4DCE-94B8-F38CA6150DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C76EA720-4413-4DCE-94B8-F38CA6150DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C8BBA03-9062-4055-9217-10642764ACDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C8BBA03-9062-4055-9217-10642764ACDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C8BBA03-9062-4055-9217-10642764ACDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C8BBA03-9062-4055-9217-10642764ACDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
