@@ -23,6 +23,7 @@ namespace BeehiveSurvivor
                 cycleService.EatCycle();
                 casualtiesService.CalculateCasualties();
                 Console.WriteLine(BeehiveController.PrintBeehiveStatus());
+                
                 isQueenDead = casualtiesService.IsQueenDead();
                 if (isQueenDead)
                 {
@@ -33,13 +34,16 @@ namespace BeehiveSurvivor
                 if (BeehiveController.Beehive.Count > Constants.PopulationCap)
                 {
                     Console.WriteLine(BeehiveController.AchieveMaxPopulation());
+                    Console.WriteLine(StatisticsController.DisplayAllStatistics());
                     break;
                 }
-                Console.WriteLine(BeehiveController.Disasters());
+                
+                Console.WriteLine(DisasterController.Disasters());
                 Console.WriteLine(BeehiveController.PrintBeehiveStatus());
                 BeehiveController.PassMonths();
             }
             Console.WriteLine(BeehiveController.EndStatus());
+            
         }
     }
 }

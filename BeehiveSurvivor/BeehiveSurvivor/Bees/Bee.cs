@@ -5,7 +5,7 @@ namespace BeehiveSurvivor.Bees;
 
 public abstract class Bee
 {
-    private string Name { get;}
+    public string Name { get;}
     public bool IsDead { get; private set; }
     public BeeEnum BeeType { get; private set;}
     protected int Level { get; private set; }
@@ -30,6 +30,11 @@ public abstract class Bee
     protected void EarnLevel()
     {
         Level++;
+    }
+
+    public int ReturnLevel()
+    {
+        return Level;
     }
     
     public void Eat()

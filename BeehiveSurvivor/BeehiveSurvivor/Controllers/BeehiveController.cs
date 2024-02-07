@@ -26,54 +26,6 @@ public static class BeehiveController
         queenBee.CreateNewBee();
     }
     
-    public static string Disasters()
-    {
-        Random random = new Random();
-        int disasterNumber = random.Next(0, 4);
-        int disasterDamage = random.Next(1, 5);
-        disasterDamage = (random.Next(1, 10) - BeehiveImprovements) + Constants.DisasterDamage;
-        string disasterDescription;
-
-        if (disasterDamage <= 0)
-        {
-            disasterDescription = "The improvements thwarted the disaster";
-            return disasterDescription;
-        }
-
-        switch (disasterNumber)
-        {
-            case 0:
-                StoredHoney -= disasterDamage;
-                if (StoredHoney < 0)
-                {
-                    StoredHoney = 0;
-                }
-                disasterDescription = "Some honey was plundered by a marauding colony";
-                break;
-            case 1:
-                StoredPollen -= disasterDamage;
-                if (StoredPollen < 0)
-                {
-                    StoredPollen = 0;
-                }
-                disasterDescription = "Some pollen was taken by fungi!";
-                break;
-            case 2:
-                StoredWax -= disasterDamage;
-                if (StoredWax < 0)
-                {
-                    StoredWax = 0;
-                }
-                disasterDescription = "Some wax was destroyed by heavy rain!";
-                break;
-            default:
-                disasterDescription = "No disasters happened this month";
-                break;
-        }
-
-        return disasterDescription;
-    }
-    
     public static string PrintBeehiveStatus()
     {
         StringBuilder sb = new StringBuilder();

@@ -30,7 +30,7 @@ public class CycleService : ICycle
 
     public void EatCycle()
     {
-        Bee ?queenBee = BeehiveController.Beehive.Find(b => b.BeeType == BeeEnum.QueenBee);
+        Bee? queenBee = BeehiveController.Beehive.FirstOrDefault(b => b.BeeType == BeeEnum.QueenBee);
         if (queenBee != null)
         {
             queenBee.Eat();
