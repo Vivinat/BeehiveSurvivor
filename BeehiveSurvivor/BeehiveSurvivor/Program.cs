@@ -43,7 +43,6 @@ namespace BeehiveSurvivor
                 BeehiveController.PassMonths();
             }
             Console.WriteLine(BeehiveController.EndStatus());
-            
         }
     }
 }

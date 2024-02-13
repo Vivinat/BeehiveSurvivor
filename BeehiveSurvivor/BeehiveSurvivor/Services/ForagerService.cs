@@ -11,7 +11,7 @@ public class ForagerService : IForager
         Random random = new Random();
         int forageType = random.Next(0, 2);
         int attackChance = random.Next(0, 5);
-        if (attackChance == 0)
+        if (attackChance <= Constants.ForagerAttackChance)
         {
             return true;
         }

@@ -20,7 +20,6 @@ public class CasualtiesService : ICasualty
 
     public bool IsQueenDead()
     {
-
         if (BeehiveController.Beehive.FindIndex(b=> b.BeeType == BeeEnum.QueenBee) == -1)
         {
             return true;

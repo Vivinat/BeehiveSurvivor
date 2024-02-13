@@ -7,7 +7,7 @@ public class BuilderService : IBuilder
 {
     public void CreateNewImprovement()
     {
-        if (BeehiveController.StoredWax > 10)
+        if (BeehiveController.StoredWax >= 10)
         {
             BeehiveController.BeehiveImprovements++;
             BeehiveController.StoredWax -= 10;

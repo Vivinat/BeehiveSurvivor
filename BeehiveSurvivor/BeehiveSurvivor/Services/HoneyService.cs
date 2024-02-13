@@ -11,7 +11,7 @@ public class HoneyService : IHoney
         if (BeehiveController.StoredPollen > 0)
         {
             Random random = new Random();
-            int pollenUsed = random.Next(0, 3);
+            int pollenUsed = random.Next(1, 3);
             BeehiveController.StoredPollen -= pollenUsed;
             if (BeehiveController.StoredPollen < 0)
             {

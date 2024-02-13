@@ -377,6 +377,16 @@
             "related": ".xml"
           }
         }
+      },
+      "BeehiveSurvivor/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/BeehiveSurvivor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BeehiveSurvivor.dll": {}
+        }
       }
     }
   },
@@ -969,10 +979,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BeehiveSurvivor/1.0.0": {
+      "type": "project",
+      "path": "../BeehiveSurvivor/BeehiveSurvivor.csproj",
+      "msbuildProject": "../BeehiveSurvivor/BeehiveSurvivor.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "BeehiveSurvivor >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.7.1",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.6.1",
@@ -1012,7 +1028,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Particular\\Documents\\GitHub\\BeehiveSurvivor\\BeehiveSurvivor\\BeehiveSurvivor\\BeehiveSurvivor.csproj": {
+              "projectPath": "C:\\Users\\Particular\\Documents\\GitHub\\BeehiveSurvivor\\BeehiveSurvivor\\BeehiveSurvivor\\BeehiveSurvivor.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
