@@ -6,7 +6,7 @@ namespace BeehiveSurvivor.Services;
 
 public class HoneyService : IHoney
 {
-    public void CreateHoney(int beeLevel)
+    public void CreateHoney(int beeLevel, RecorderService recorderService)
     {
         if (BeehiveController.StoredPollen > 0)
         {
@@ -18,6 +18,7 @@ public class HoneyService : IHoney
                 BeehiveController.StoredPollen = 0;
             }
             BeehiveController.StoredHoney += beeLevel;
+            recorderService.NumberOfImprovements += beeLevel;
         }
     }
 }

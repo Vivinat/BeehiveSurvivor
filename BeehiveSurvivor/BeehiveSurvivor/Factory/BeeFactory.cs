@@ -11,11 +11,11 @@ public class BeeFactory : IBeeFactory
         switch (beeType)
         {
             case BeeEnum.ForagerBee:
-                return new ForagerBee(name, 1, beeType, new EatService(), new ForagerService());
+                return new ForagerBee(name, 1, beeType, new EatService(), new ForagerService(), new RecorderService());
             case BeeEnum.BuilderBee:
-                return new BuilderBee(name, 1, beeType, new EatService(), new BuilderService());
+                return new BuilderBee(name, 1, beeType, new EatService(), new BuilderService(), new RecorderService());
             case BeeEnum.WorkerBee:
-                return new WorkerBee(name, 1, beeType, new EatService(), new HoneyService());
+                return new WorkerBee(name, 1, beeType, new EatService(), new HoneyService(), new RecorderService());
             default:
                 throw new ArgumentException("Invalid bee type.");
         }

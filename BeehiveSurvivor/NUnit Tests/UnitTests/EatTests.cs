@@ -4,6 +4,7 @@ using BeehiveSurvivor.Services;
 
 namespace NUnit_Tests.UnitTests;
 
+[TestFixture]
 public class EatTests
 {
     private  CycleService _cycleService = new CycleService();
@@ -12,6 +13,7 @@ public class EatTests
     [SetUp]
     public void Setup()
     {
+        BeehiveController.Beehive.Clear();
         _cycleService = new CycleService();
         _casualtiesService = new CasualtiesService();
         BeehiveController.InitiateBeehive();

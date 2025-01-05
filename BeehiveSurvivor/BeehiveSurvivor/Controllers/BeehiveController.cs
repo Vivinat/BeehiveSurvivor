@@ -19,6 +19,10 @@ public static class BeehiveController
     
     public static void InitiateBeehive()
     {
+        Beehive.Clear();
+        StoredHoney = 0;
+        StoredPollen = 0;
+        StoredWax = 0;
         SurvivedMonths = 0;
         SurvivedYears = 0;
         QueenBee queenBee = new QueenBee(NameController.GenerateName(), 1, BeeEnum.QueenBee, new EatService(), new BreederService(new BeeFactory()));

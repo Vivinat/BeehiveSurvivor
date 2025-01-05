@@ -1,0 +1,5 @@
+C:\Users\Particular\Documents\GitHub\BeehiveSurvivor\BeehiveSurvivor\BeehiveSurvivor\bin\Release\net7.0\publish\BeehiveSurvivor.exe
+C:\Users\Particular\Documents\GitHub\BeehiveSurvivor\BeehiveSurvivor\BeehiveSurvivor\bin\Release\net7.0\publish\BeehiveSurvivor.dll
+C:\Users\Particular\Documents\GitHub\BeehiveSurvivor\BeehiveSurvivor\BeehiveSurvivor\bin\Release\net7.0\publish\BeehiveSurvivor.deps.json
+C:\Users\Particular\Documents\GitHub\BeehiveSurvivor\BeehiveSurvivor\BeehiveSurvivor\bin\Release\net7.0\publish\BeehiveSurvivor.runtimeconfig.json
+C:\Users\Particular\Documents\GitHub\BeehiveSurvivor\BeehiveSurvivor\BeehiveSurvivor\bin\Release\net7.0\publish\BeehiveSurvivor.pdb

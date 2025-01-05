@@ -14,6 +14,7 @@ public class CasualtiesService : ICasualty
             if (deadBee.IsDead)
             {
                 BeehiveController.Beehive.Remove(deadBee);
+                StatisticsController.TotalDeadBees++;
             }
         }
     }

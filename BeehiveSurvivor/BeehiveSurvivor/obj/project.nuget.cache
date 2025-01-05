@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "6SWY4pyzyxyH1PAUHqSK5p3ye7y0Jgw2cVe/qFSKnt73VH5IlHBfmtZet0hiaV2OPUrkFfBqvaFI6k6MZkx5zA==",
+  "dgSpecHash": "B9rHRcbKldY=",
   "success": true,
   "projectFilePath": "C:\\Users\\Particular\\Documents\\GitHub\\BeehiveSurvivor\\BeehiveSurvivor\\BeehiveSurvivor\\BeehiveSurvivor.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Particular\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\Particular\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\Particular\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\Particular\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.20\\microsoft.netcore.app.host.win-x64.7.0.20.nupkg.sha512"
+  ],
   "logs": []
 }

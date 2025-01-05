@@ -10,6 +10,7 @@ public class CycleService : ICycle
     {
         for (int i = BeehiveController.Beehive.Count - 1; i >= 0; i--)
         {
+            Console.WriteLine("{0}, {1} is working", BeehiveController.Beehive[i].Name, BeehiveController.Beehive[i].BeeType);
             switch (BeehiveController.Beehive[i].BeeType)
             {
                 case BeeEnum.ForagerBee:

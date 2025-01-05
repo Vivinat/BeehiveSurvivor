@@ -3,6 +3,7 @@ using BeehiveSurvivor.Controllers;
 
 namespace NUnit_Tests.UnitTests;
 
+[TestFixture]
 public class CasualtiesTests
 {
     private  CasualtiesService _casualtiesService = new CasualtiesService();
@@ -11,6 +12,7 @@ public class CasualtiesTests
     [SetUp]
     public void Setup()
     {
+        BeehiveController.Beehive.Clear();
         _cycleService = new CycleService();
         _casualtiesService = new CasualtiesService();
         BeehiveController.InitiateBeehive();

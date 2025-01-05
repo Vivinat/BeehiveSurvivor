@@ -5,6 +5,7 @@ using BeehiveSurvivor.Services;
 
 namespace NUnit_Tests.UnitTests;
 
+[TestFixture]
 public class WorkTests
 {
     private  CycleService _cycleService = new CycleService();
@@ -12,8 +13,8 @@ public class WorkTests
     [SetUp]
     public void Setup()
     {
-        _cycleService = new CycleService();
         BeehiveController.Beehive.Clear();
+        _cycleService = new CycleService();
         BeehiveController.StoredHoney = 0;
         BeehiveController.StoredPollen = 0;
         BeehiveController.StoredWax = 0;
@@ -23,9 +24,9 @@ public class WorkTests
     [Test]
     public void TestAllForagers()
     {
-        BeehiveController.Beehive.Add(new ForagerBee("test",1,BeeEnum.ForagerBee, new EatService(), new ForagerService()));
-        BeehiveController.Beehive.Add(new ForagerBee("test1",1,BeeEnum.ForagerBee, new EatService(), new ForagerService()));
-        BeehiveController.Beehive.Add(new ForagerBee("test2",1,BeeEnum.ForagerBee, new EatService(), new ForagerService()));
+        BeehiveController.Beehive.Add(new ForagerBee("test",1,BeeEnum.ForagerBee, new EatService(), new ForagerService(), new RecorderService()));
+        BeehiveController.Beehive.Add(new ForagerBee("test1",1,BeeEnum.ForagerBee, new EatService(), new ForagerService(), new RecorderService()));
+        BeehiveController.Beehive.Add(new ForagerBee("test2",1,BeeEnum.ForagerBee, new EatService(), new ForagerService(), new RecorderService()));
         _cycleService.WorkCycle();
         Assert.That(BeehiveController.StoredHoney >= 0 || BeehiveController.StoredWax >= 0);
     }
@@ -33,9 +34,9 @@ public class WorkTests
     [Test]
     public void LevelUpTest()
     {
-        BeehiveController.Beehive.Add(new ForagerBee("test",1,BeeEnum.ForagerBee, new EatService(), new ForagerService()));
-        BeehiveController.Beehive.Add(new BuilderBee("test1",1,BeeEnum.BuilderBee, new EatService(), new BuilderService()));
-        BeehiveController.Beehive.Add(new WorkerBee("test2",1,BeeEnum.WorkerBee, new EatService(), new HoneyService()));
+        BeehiveController.Beehive.Add(new ForagerBee("test",1,BeeEnum.ForagerBee, new EatService(), new ForagerService(), new RecorderService()));
+        BeehiveController.Beehive.Add(new BuilderBee("test1",1,BeeEnum.BuilderBee, new EatService(), new BuilderService(), new RecorderService()));
+        BeehiveController.Beehive.Add(new WorkerBee("test2",1,BeeEnum.WorkerBee, new EatService(), new HoneyService(), new RecorderService()));
         _cycleService.WorkCycle();
         Assert.True(BeehiveController.Beehive.All(b => b.ReturnLevel() == 2));
     }
@@ -43,7 +44,7 @@ public class WorkTests
     [Test]
     public void BuilderTest()
     {
-        BuilderBee builderBee = new BuilderBee("builderTest",1,BeeEnum.BuilderBee, new EatService(),new BuilderService());
+        BuilderBee builderBee = new BuilderBee("builderTest",1,BeeEnum.BuilderBee, new EatService(),new BuilderService(), new RecorderService());
         BeehiveController.StoredWax = 10;
         builderBee.Build();
         Assert.That(BeehiveController.BeehiveImprovements == 1 && BeehiveController.StoredWax == 0);
@@ -53,9 +54,9 @@ public class WorkTests
     public void TestAllBuilders()
     {
         BeehiveController.StoredWax = 20;
-        BeehiveController.Beehive.Add(new BuilderBee("test1",1,BeeEnum.BuilderBee, new EatService(), new BuilderService()));
-        BeehiveController.Beehive.Add(new BuilderBee("test1",1,BeeEnum.BuilderBee, new EatService(), new BuilderService()));
-        BeehiveController.Beehive.Add(new BuilderBee("test1",1,BeeEnum.BuilderBee, new EatService(), new BuilderService()));
+        BeehiveController.Beehive.Add(new BuilderBee("test1",1,BeeEnum.BuilderBee, new EatService(), new BuilderService(), new RecorderService()));
+        BeehiveController.Beehive.Add(new BuilderBee("test1",1,BeeEnum.BuilderBee, new EatService(), new BuilderService(), new RecorderService()));
+        BeehiveController.Beehive.Add(new BuilderBee("test1",1,BeeEnum.BuilderBee, new EatService(), new BuilderService(), new RecorderService()));
         _cycleService.WorkCycle();
         Assert.That(BeehiveController.BeehiveImprovements == 2 && BeehiveController.StoredWax == 0);
     }
@@ -64,7 +65,7 @@ public class WorkTests
     public void TestForagerDeathBySting()
     {
         //Must change setting in Constants in order to force death in work 
-        BeehiveController.Beehive.Add(new ForagerBee("test1",1,BeeEnum.ForagerBee, new EatService(), new ForagerService()));
+        BeehiveController.Beehive.Add(new ForagerBee("test1",1,BeeEnum.ForagerBee, new EatService(), new ForagerService(), new RecorderService()));
         _cycleService.WorkCycle();
         Assert.True(BeehiveController.Beehive.All(b => b.IsDead));
     }
@@ -73,7 +74,7 @@ public class WorkTests
     public void DeadForagerBringsNoResources()
     {
         //Must change setting in Constants in order to force death in work
-        BeehiveController.Beehive.Add(new ForagerBee("test",1,BeeEnum.ForagerBee, new EatService(), new ForagerService()));
+        BeehiveController.Beehive.Add(new ForagerBee("test",1,BeeEnum.ForagerBee, new EatService(), new ForagerService(), new RecorderService()));
         _cycleService.WorkCycle();
         Assert.That(BeehiveController.StoredPollen == 0 && BeehiveController.StoredWax == 0);
     }
@@ -82,7 +83,7 @@ public class WorkTests
     public void TestHoneyMaking()
     {
         BeehiveController.StoredPollen = 2;
-        WorkerBee workerBee = new WorkerBee("test",1, BeeEnum.WorkerBee, new EatService(), new HoneyService());
+        WorkerBee workerBee = new WorkerBee("test",1, BeeEnum.WorkerBee, new EatService(), new HoneyService(), new RecorderService());
         workerBee.CreateHoney();
         Assert.That(BeehiveController.StoredPollen < 2 && BeehiveController.StoredHoney == 1);
     }
@@ -90,7 +91,7 @@ public class WorkTests
     [Test]
     public void NoPollenForHoney()
     {
-        WorkerBee workerBee = new WorkerBee("test",1, BeeEnum.WorkerBee, new EatService(), new HoneyService());
+        WorkerBee workerBee = new WorkerBee("test",1, BeeEnum.WorkerBee, new EatService(), new HoneyService(), new RecorderService());
         workerBee.CreateHoney();
         Assert.That(BeehiveController.StoredPollen == 0 && BeehiveController.StoredHoney == 0);    
     }

@@ -1,6 +1,8 @@
-﻿namespace BeehiveSurvivor.Interfaces;
+﻿using BeehiveSurvivor.Services;
+
+namespace BeehiveSurvivor.Interfaces;
 
 public interface IForager
 {
-    public bool Forage(int beeLevel);
+    public bool Forage(int beeLevel, RecorderService recorderService);
 }

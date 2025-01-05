@@ -6,7 +6,7 @@ namespace BeehiveSurvivor.Services;
 
 public class ForagerService : IForager
 {
-    public bool Forage(int beeLevel)
+    public bool Forage(int beeLevel, RecorderService recorderService)
     {
         Random random = new Random();
         int forageType = random.Next(0, 2);
@@ -20,9 +20,11 @@ public class ForagerService : IForager
         {
             case 0:
                 BeehiveController.StoredPollen += beeLevel * Constants.DifficultRating;
+                recorderService.NumberOfImprovements += beeLevel * Constants.DifficultRating;
                 break;
             case 1:
                 BeehiveController.StoredWax += beeLevel * Constants.DifficultRating;
+                recorderService.NumberOfImprovements += beeLevel * Constants.DifficultRating;
                 break;
         }
 

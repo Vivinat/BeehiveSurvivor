@@ -19,6 +19,7 @@ public class BreederService : IBreeder
         Random random = new Random();
         int numberOfBirths = random.Next(1, 5) + Constants.BirthBonus;
         Console.WriteLine("Number of newborn bees: " + numberOfBirths);
+        StatisticsController.TotalBornBees += numberOfBirths;
 
         while (numberOfBirths > 0)
         {

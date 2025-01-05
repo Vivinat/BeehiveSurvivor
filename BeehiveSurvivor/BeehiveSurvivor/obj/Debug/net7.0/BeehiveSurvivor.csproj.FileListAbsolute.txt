@@ -26,3 +26,4 @@ C:\Users\Particular\Documents\GitHub\BeehiveSurvivor\BeehiveSurvivor\BeehiveSurv
 C:\Users\Particular\Documents\GitHub\BeehiveSurvivor\BeehiveSurvivor\BeehiveSurvivor\obj\Debug\net7.0\BeehiveSurvivor.pdb
 C:\Users\Particular\Documents\GitHub\BeehiveSurvivor\BeehiveSurvivor\BeehiveSurvivor\obj\Debug\net7.0\BeehiveSurvivor.genruntimeconfig.cache
 C:\Users\Particular\Documents\GitHub\BeehiveSurvivor\BeehiveSurvivor\BeehiveSurvivor\obj\Debug\net7.0\ref\BeehiveSurvivor.dll
+C:\Users\Particular\Documents\GitHub\BeehiveSurvivor\BeehiveSurvivor\BeehiveSurvivor\obj\Debug\net7.0\BeehiveSurvivor.sourcelink.json
